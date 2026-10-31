@@ -1,0 +1,5 @@
+theia@theia-dezhang:/home/project/xrwvm-fullstack_developer_capstone/server/fr
+ontend$ curl -X POST "https://dezhang-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai/djangoapp/login" \
+  -H "Content-Type: application/json" \
+  -d '{"userName": "admin", "password": "admin"}'
+{"userName": "admin", "status": "Authenticated"}
