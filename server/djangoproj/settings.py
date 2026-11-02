@@ -145,6 +145,6 @@ STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
 
-ALLOWED_HOSTS=['localhost','https://dezhang-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+ALLOWED_HOSTS=['localhost','https://dezhang-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 
-CSRF_TRUSTED_ORIGINS=['https://dezhang-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+CSRF_TRUSTED_ORIGINS=['https://dezhang-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
