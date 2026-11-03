@@ -16,26 +16,29 @@ def initiate():
             name=data['name'], description=data['description']))
 
     # Create CarModel instances with the corresponding CarMake instances
+    nissan, mercedes, audi, kia, toyota = car_make_instances
+
+    # (name, type, year, car_make)
+    # Type values match CarModel.CAR_TYPES ("SEDAN", not "Sedan")
     car_model_data = [
-        {"name": "Pathfinder", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
-        {"name": "Qashqai", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
-        {"name": "XTRAIL", "type": "SUV", "year": 2023, "car_make": car_make_instances[0]},
-        {"name": "A-Class", "type": "SUV", "year": 2023, "car_make": car_make_instances[1]},
-        {"name": "C-Class", "type": "SUV", "year": 2023, "car_make": car_make_instances[1]},
-        {"name": "E-Class", "type": "SUV", "year": 2023, "car_make": car_make_instances[1]},
-        {"name": "A4", "type": "SUV", "year": 2023, "car_make": car_make_instances[2]},
-        {"name": "A5", "type": "SUV", "year": 2023, "car_make": car_make_instances[2]},
-        {"name": "A6", "type": "SUV", "year": 2023, "car_make": car_make_instances[2]},
-        {"name": "Sorrento", "type": "SUV", "year": 2023, "car_make": car_make_instances[3]},
-        {"name": "Carnival", "type": "SUV", "year": 2023, "car_make": car_make_instances[3]},
-        # Type values match CarModel.CAR_TYPES ("SEDAN", not "Sedan")
-        {"name": "Cerato", "type": "SEDAN", "year": 2023, "car_make": car_make_instances[3]},
-        {"name": "Corolla", "type": "SEDAN", "year": 2023, "car_make": car_make_instances[4]},
-        {"name": "Camry", "type": "SEDAN", "year": 2023, "car_make": car_make_instances[4]},
-        {"name": "Kluger", "type": "SUV", "year": 2023, "car_make": car_make_instances[4]},
+        ("Pathfinder", "SUV", 2023, nissan),
+        ("Qashqai", "SUV", 2023, nissan),
+        ("XTRAIL", "SUV", 2023, nissan),
+        ("A-Class", "SUV", 2023, mercedes),
+        ("C-Class", "SUV", 2023, mercedes),
+        ("E-Class", "SUV", 2023, mercedes),
+        ("A4", "SUV", 2023, audi),
+        ("A5", "SUV", 2023, audi),
+        ("A6", "SUV", 2023, audi),
+        ("Sorrento", "SUV", 2023, kia),
+        ("Carnival", "SUV", 2023, kia),
+        ("Cerato", "SEDAN", 2023, kia),
+        ("Corolla", "SEDAN", 2023, toyota),
+        ("Camry", "SEDAN", 2023, toyota),
+        ("Kluger", "SUV", 2023, toyota),
         # Add more CarModel instances as needed
     ]
 
-    for data in car_model_data:
-        CarModel.objects.create(name=data['name'], car_make=data['car_make'],
-                                type=data['type'], year=data['year'])
+    for name, car_type, year, car_make in car_model_data:
+        CarModel.objects.create(name=name, car_make=car_make,
+                                type=car_type, year=year)
