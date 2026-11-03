@@ -9,7 +9,7 @@ on:
 jobs:
   lint_python:
     name: Lint Python Files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
 
@@ -38,7 +38,7 @@ jobs:
 
   lint_js:
       name: Lint JavaScript Files
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-26.04
 
       steps:
       - name: Checkout Repository
